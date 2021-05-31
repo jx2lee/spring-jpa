@@ -10,7 +10,7 @@ public class JpaMain {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("spring-jpa");
         EntityManager em = emf.createEntityManager();
 
-        EntityTransaction tx = em.getTransaction();ㄴ
+        EntityTransaction tx = em.getTransaction();
         tx.begin();
 
         try {
