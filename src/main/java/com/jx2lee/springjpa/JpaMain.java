@@ -50,6 +50,17 @@ public class JpaMain {
             // 이유는 이미 db 에서 조회한 값을 영속성 컨텍스트에 저장해놓기 때문에
             // 굳이 다시 persist 하지 않아도 된다.
 
+
+            // Member 객체는 비영속 상태
+            Member member = new Member();
+            member.setId(1L);
+            member.setName("jx2lee");
+
+            // 영속 상태
+            System.out.println("==== BEFORE ====");
+            em.persist(member);
+            System.out.println("==== AFTER ====");
+
             tx.commit();
 
 //            수정
