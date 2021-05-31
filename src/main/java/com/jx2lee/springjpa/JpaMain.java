@@ -10,15 +10,21 @@ public class JpaMain {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("spring-jpa");
         EntityManager em = emf.createEntityManager();
 
-        EntityTransaction tx = em.getTransaction();
+        EntityTransaction tx = em.getTransaction();ㄴ
         tx.begin();
 
         try {
+
+            // Member 객체는 비영속 상태
             Member member = new Member();
             member.setId(1L);
             member.setName("jx2lee");
 
+            // 영속 상태
+            System.out.println("==== BEFORE ====");
             em.persist(member);
+            System.out.println("==== AFTER ====");
+
             tx.commit();
 
 //            수정
