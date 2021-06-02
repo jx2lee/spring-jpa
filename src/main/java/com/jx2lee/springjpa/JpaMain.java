@@ -18,7 +18,7 @@ public class JpaMain {
             // JPA 에서 더이상 관리하지 않겠다는 의미 (detach)
             // 주로 사용하지 않지만 확인용으로 사용할 수 있으니 사용 방법은 익혀두도록 하자.
             Member member = em.find(Member.class, 25L);
-            member.setName("aaaaaaa");
+//            member.setName("aaaaaaa");
 
             em.detach(member);
 
