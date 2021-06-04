@@ -14,26 +14,7 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member1 = new Member();
-            member1.setName("A");
-            Member member2 = new Member();
-            member2.setName("A");
-            Member member3 = new Member();
-            member3.setName("A");
-
-            System.out.println("-----------------");
-
-            em.persist(member1); //1, 51
-            em.persist(member2); //MEM
-            em.persist(member3); //MEM
-
-            System.out.println("member.getId = " + member1.getId());
-            System.out.println("member.getId = " + member2.getId());
-            System.out.println("member.getId = " + member3.getId());
-            System.out.println("-----------------");
-
             tx.commit();
-
         } catch (Exception e) {
             tx.rollback();
         } finally {
