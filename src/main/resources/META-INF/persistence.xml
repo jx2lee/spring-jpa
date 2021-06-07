@@ -9,6 +9,7 @@
         <class>com.jx2lee.springjpa.domain.OrderStatus</class>
         <class>com.jx2lee.springjpa.domain.Item</class>
         <class>com.jx2lee.springjpa.domain.Locker</class>
+        <class>com.jx2lee.springjpa.domain.Product</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
