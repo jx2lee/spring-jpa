@@ -14,8 +14,6 @@
         <class>com.jx2lee.springjpa.domain.Album</class>
         <class>com.jx2lee.springjpa.domain.Movie</class>
         <class>com.jx2lee.springjpa.domain.Book</class>
-        <class>com.jx2lee.springjpa.domain.Parent</class>
-        <class>com.jx2lee.springjpa.domain.Child</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
