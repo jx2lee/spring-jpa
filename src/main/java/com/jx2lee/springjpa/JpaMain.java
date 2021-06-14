@@ -1,6 +1,8 @@
 package com.jx2lee.springjpa;
 
+import com.jx2lee.springjpa.domain.Child;
 import com.jx2lee.springjpa.domain.Order;
+import com.jx2lee.springjpa.domain.Parent;
 import org.hibernate.Hibernate;
 import org.hibernate.jpa.internal.PersistenceUnitUtilImpl;
 
@@ -19,21 +21,22 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Order order = new Order();
-            order.setOrderDate(LocalDateTime.now());
 
-            em.persist(order);
+            Child child1 = new Child();
+            Child child2 = new Child();
+
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
+
+            em.persist(parent);
             em.flush();
             em.clear();
 
-            // Order findOrder = em.find(Order.class, order.getId());
-            Order refOrder = em.getReference(Order.class, order.getId());
-            System.out.println("findOrder = " + refOrder.getClass());
-            // 간접 초기화 // findOrder = class com.jx2lee.springjpa.domain.Order$HibernateProxy$IQdRxiAH
-            // 직접 초기화, 단 JPA 표준은 강제초기화 없음 // Hibernate.initialize(refOrder);
-            // System.out.println("refOrder.getOrderDate() = " + refOrder.getOrderDate());
-            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(refOrder));
-
+            Parent findParent = em.find(Parent.class, parent.getId());
+            findParent.getChildList().remove(0);
+            // em.persist(child1);
+            // em.persist(child2);
             tx.commit();
 
         } catch (Exception e) {
