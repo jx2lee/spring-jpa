@@ -1,2 +1,2 @@
 rootProject.name = 'spring-jpa'
-
+include ':orm-standard-jpa'
