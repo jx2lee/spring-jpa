@@ -1,0 +1,6 @@
+dependencies {
+    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.13.Final'
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'junit:junit:4.13.2'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
